@@ -70,7 +70,7 @@ const personalMovieDB = {
                 i--;
             } else {
                 personalMovieDB.genres[i] = genre;
-            }
+            }   
         }
        personalMovieDB.genres.forEach((item,i) => {
             console.log(`Любимый жанр #${i+1} - это ${item}`);
