@@ -49,13 +49,27 @@ movieDB.movies.forEach((item, index) => {
     </li>`;
 });
 
+// const interactiveItem = document.querySelectorAll('.promo__interactive-item');
+// const deleteItem = interactiveItem.querySelectorAll('.delete');
+
+// interactiveItem.forEach(function (item) {
+//     item.addEventListener('click', () => {
+//         item.remove();
+//     }); 
+// });
+
 const interactiveItem = document.querySelectorAll('.promo__interactive-item');
+const btnDelete = document.querySelectorAll('.delete');
 
-interactiveItem.forEach(function (item) {
-    item.addEventListener('click', () => {
-        item.remove();
-    }); 
+const deleteItem = (e) => {
+    e.target.parentElement.remove();
+};
+
+btnDelete.forEach((item) => {
+    item.addEventListener('click',deleteItem); 
 });
-
+// interactiveItem.forEach((item) => {
+//     item.addEventListener('click', deleteItem);
+// });
 
 
