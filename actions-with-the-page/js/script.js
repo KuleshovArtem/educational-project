@@ -29,6 +29,8 @@ const genre = document.querySelector('.promo__genre');
 const promoBg = document.querySelector('.promo__bg');
 const interactiveList = document.querySelector('.promo__interactive-list');
 
+
+
 adv.forEach(item => 
     item.remove());
 
@@ -47,7 +49,13 @@ movieDB.movies.forEach((item, index) => {
     </li>`;
 });
 
+const interactiveItem = document.querySelectorAll('.promo__interactive-item');
 
+interactiveItem.forEach(function (item) {
+    item.addEventListener('click', () => {
+        item.remove();
+    }); 
+});
 
 
 
