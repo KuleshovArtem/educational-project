@@ -1,136 +1,108 @@
-// 'use strict';
+/* Задания на урок:
 
-// const movieDB = {
-//     movies: [
-//         "Логан",
-//         "Лига справедливости",
-//         "Ла-ла лэнд",
-//         "Одержимость",
-//         "Скотт Пилигрим против..."
-//     ]
-// };
+1) Реализовать функционал, что после заполнения формы и нажатия кнопки "Подтвердить" - 
+новый фильм добавляется в список. Страница не должна перезагружаться.
+Новый фильм должен добавляться в movieDB.movies.
+Для получения доступа к значению input - обращаемся к нему как input.value;
+P.S. Здесь есть несколько вариантов решения задачи, принимается любой, но рабочий.
 
-// const adv = document.querySelectorAll('.promo__adv img');
-// const genre = document.querySelector('.promo__genre');
-// const promoBg = document.querySelector('.promo__bg');
-// const interactiveList = document.querySelector('.promo__interactive-list');
+2) Если название фильма больше, чем 21 символ - обрезать его и добавить три точки
 
+3) При клике на мусорную корзину - элемент будет удаляться из списка (сложно)
 
+4) Если в форме стоит галочка "Сделать любимым" - в консоль вывести сообщение: 
+"Добавляем любимый фильм"
 
-// adv.forEach(item => 
-//     item.remove());
+5) Фильмы должны быть отсортированы по алфавиту */
 
-// genre.textContent = 'драма';
+'use strict';
 
-// promoBg.style.backgroundImage = 'url("../img/bg.jpg")';
+document.addEventListener('DOMContentLoaded', () => {
+    
+    const movieDB = {
+        movies: [
+            "Логан",
+            "Лига справедливости",
+            "Ла-ла лэнд",
+            "Одержимость",
+            "Скотт Пилигрим против..."
+        ]
+    };
 
-// interactiveList.innerHTML = '';
+    const adv = document.querySelectorAll('.promo__adv img');
+    const genre = document.querySelector('.promo__genre');
+    const promoBg = document.querySelector('.promo__bg');
+    const interactiveList = document.querySelector('.promo__interactive-list');
+    const btn = document.querySelector('button');
+    const addForm = document.querySelector('form.add');
+    const addInput = addForm.querySelector('.adding__input');
+    const checkbox = addForm.querySelector('[type="checkbox"]');
 
-// movieDB.movies.sort();
+    const deleteAdv = (arr) => {
+        arr.forEach(item => 
+            item.remove());
+    };
+    
+    const makeChange = () => {
+        genre.textContent = 'драма';
 
-// movieDB.movies.forEach((item, index) => {
-//     interactiveList.innerHTML += `
-//     <li class="promo__interactive-item">${index+1} ${item}
-//          <div class="delete"></div>
-//     </li>`;
-// });
+        promoBg.style.backgroundImage = 'url("../img/bg.jpg")';
+    };
 
-// const interactiveItem = document.querySelectorAll('.promo__interactive-item');
-// const btnDelete = document.querySelectorAll('.delete');
+    const sortArr = (arr) => {
+        arr.sort();
+    };
 
-// const deleteItem = (e) => {
-//     e.target.parentElement.remove();
-// };
+    addForm.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-// btnDelete.forEach((item) => {
-//     item.addEventListener('click',deleteItem); 
-// });
+        let newFilm = addInput.value;
+        const favorit = checkbox.checked;
 
-let students = {
-    js: [{
-        name: 'John',
-        progress: 100
-    }, {
-        name: 'Ivan',
-        progress: 60 
-    }],
-
-    html: {
-        basic:[{
-            name: 'Peter',
-            progress: 20
-        }, {
-            name: 'Ann',
-            progress: 18
-        }],
-
-        pro: [{
-            name: 'Sam',
-            progress: 10
-        }]
-    }
-};
-
-function getTotalProgressByInteration(data) {
-    let total = 0;
-    let students = 0;
-
-    for (let course of Object.values(data)) {
-        if (Array.isArray(course)) {
-            students += course.length;
-
-            for (let i = 0; i < course.length; i++) {
-                total += course[i].progress;
+        if (newFilm) {
+            if(newFilm.length > 21) {
+                newFilm = `${newFilm.substring(0, 22)}...`;
             }
-        } else {
-            for (let subcourse of Object.values(course)) {
-                students += subcourse.length;
 
-                for (let i = 0; i < subcourse.length; i++) {
-                    total += subcourse[i].progress;
-                }
+            if(favorit) {
+                console.log("Добавляем любимый фильм");
             }
+            
+            movieDB.movies.push(newFilm);
+            sortArr(movieDB.movies);
+
+            createMovieList(movieDB.movies, interactiveList );
         }
+        e.target.reset();
+
+        
+    });
+
+    function createMovieList (films, parent) {
+        parent.innerHTML = '';
+        sortArr(films);
+
+        films.forEach((item, index) => {
+            parent.innerHTML += `
+            <li class="promo__interactive-item">${index+1} ${item}
+                <div class="delete"></div>
+            </li>`;
+        });
+
+        document.querySelectorAll('.delete').forEach((item, i) => {
+            item.addEventListener('click',() => {
+                item.parentElement.remove();
+                films.splice(i, 1);
+
+                createMovieList(films, parent );
+            }); 
+        });
     }
 
-    return total / students;
+    makeChange();
+    deleteAdv(adv);
+    createMovieList(movieDB.movies, interactiveList );
+    
 
-}
+});
 
-// console.log(getTotalProgressByInteration(students));
-
-function getTotalProgressByRecursion(data) {
-    if (Array.isArray(data)) {
-        let total = [];
-
-        for (let i = 0; i < data.length; i++) {
-            total += data[i].progress;
-        }
-
-        return [total , data.length];
-    } else {
-        let total= [0, 0];
-
-        for (let subData of Object.values(data)) {
-            const subDataArr = getTotalProgressByRecursion(subData);
-
-            total[0] +=subDataArr[0];
-            total[1] +=subDataArr[1];
-        }
-        return total;
-    } 
-}
-
-const result = getTotalProgressByRecursion(students);
-
-console.log(result[0] / result[1]);
-
-function factorial(number) {
-    if (number === 1) {
-        return number;
-    } else {
-        return number * factorial(number - 1);
-    }
-}
-
-console.log(factorial(1));
