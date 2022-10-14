@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if(favorit) {
                 console.log("Добавляем любимый фильм");
             }
-            
+
             movieDB.movies.push(newFilm);
             sortArr(movieDB.movies);
 
