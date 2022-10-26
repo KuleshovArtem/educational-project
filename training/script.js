@@ -24,4 +24,3 @@ wrapper.addEventListener('click', (event) => {
     } 
 });
 
-wrapper
