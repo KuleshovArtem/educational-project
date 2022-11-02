@@ -6,6 +6,26 @@
 html {
     font-family: 'Roboto', sans-serif;
 }
+
+header{
+    height: 50px;
+}
+nav{
+    position:fixed;
+    height: 50px;
+    width: 100%;
+    background-color:#F9BF3B;
+    z-index: 2;
+    
+}
+.menu {
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type:none;
+}
+
 .container{
     position: relative;
     width: 1140px;
