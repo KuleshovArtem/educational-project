@@ -152,13 +152,13 @@ nav {
     color: #222222;
 }
 .reasons_item {
-    display: inline-block;
-    /* width: 371px; */
+    display: flex;
 }
 .reasons_img {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
     width: 116px;
     height: 116px;
     background: #1EACC7;
