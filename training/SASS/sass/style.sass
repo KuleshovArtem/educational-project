@@ -1,0 +1,26 @@
+$color_red: red
+@mixin small_text
+    font-size: 16px
+    color: black
+    display: block
+    width: 300px
+    
+h1
+    color: red
+    display: block
+    @include small_text
+    
+
+
+h2
+    color: blue
+.block
+    background-color: green
+    h3 
+        color: $color_red
+    &_color
+            background-color: $color_red
+            button
+                @include small_text
+            
+
