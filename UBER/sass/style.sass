@@ -1,3 +1,5 @@
+$color_ligth_blue: #1EACC7
+$color_red_orange: #FF5656
 * 
 	font-family: 'Roboto', sans-serif 
 header 
@@ -57,7 +59,7 @@ nav
 	margin-top: 19px 
 	width: 172px 
 	height: 46px 
-	background: linear-gradient(to top, #1EACC7 0%, #4CE2FF 100%) 
+	background: linear-gradient(to top, $color_ligth_blue 0%, #4CE2FF 100%) 
 	box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.12) 
 	border-radius: 4px 
 	border: none 
@@ -100,7 +102,7 @@ nav
 	margin: 116px auto 0 auto 
 	width: 259px 
 	height: 63px 
-	background: linear-gradient(0deg, #1EACC7 0%, #4CE2FF 100%) 
+	background: linear-gradient(0deg, $color_ligth_blue 0%, #4CE2FF 100%) 
 	box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.12) 
 	border-radius: 4px 
 	border: none 
@@ -115,6 +117,7 @@ nav
 	padding: 18px 0 64px 0 
 	background-color: #FFFFFF 
 .label 
+	position: relative
 	margin: 0 auto 
 	padding: 5px 12px 
 	width: 115px 
@@ -124,21 +127,33 @@ nav
 	font-size: 11px 
 	text-transform: uppercase 
 	text-align: center 
-	color: #FFFFFF 
+	color: #FFFFFF
+	&_white
+		color: #070716
+		background: #FFFFFF 
+		z-index: 2
 .title 
+	position: relative
 	margin-top: 32px 
 	font-weight: 700 
 	font-size: 38px 
 	text-align: center 
 	text-transform: uppercase 
 	color: #222222
+	&_white
+		color: #FFFFFF
+		z-index: 2
 .subtitle
+	position: relative
 	margin-top: 19px
 	font-weight: 400
 	font-size: 17px
 	line-height: 21px
 	text-align: center
 	color: #222222
+	&_white
+		color: #FFFFFF
+		z-index: 2
 .reasons_item 
 	display: flex 
 	justify-content: center 
@@ -150,7 +165,7 @@ nav
 	align-items: center 
 	width: 116px 
 	height: 116px 
-	background: #1EACC7 
+	background: $color_ligth_blue
 	border-radius: 100% 
 .reasons_descr 
 	width: 343px 
@@ -159,7 +174,7 @@ nav
 	font-weight: 400 
 	font-size: 17px 
 	line-height: 21px 
-	color: #1EACC7 
+	color: $color_ligth_blue
 .reasons_text 
 	font-weight: 300 
 	font-size: 15px 
@@ -212,4 +227,33 @@ nav
 			border-radius: 100%
 			padding: 6px
 			cursor: pointer
+.choice
+	position: relative
+	min-height: 898px
+	padding-top: 57px
+	background: url('../img/background_car.png') center center/cover no-repeat
+	&_descr
+		font-weight: 300
+		font-size: 17px
+		line-height: 24px
+		text-align: center
+		color: #222222
+	&_img
+		display: block
+		margin: 54px auto 0 auto
+		z-index: 2
+		position: relative
+	.background_dark
+		width: 100%
+		height: 502px
+		background: #070716
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 1
+
+		
+
+
+
 			
