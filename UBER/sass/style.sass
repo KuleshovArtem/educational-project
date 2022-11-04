@@ -6,7 +6,8 @@ $color_red_orange: #FF5656
 		background-image: none
 		background-color: $color_ligth_blue
 * 
-	font-family: 'Roboto', sans-serif 
+	font-family: 'Roboto', sans-serif
+ 
 header 
 	position: relative 
 	height: 50px 
@@ -139,6 +140,9 @@ nav
 		color: #070716
 		background: #FFFFFF 
 		z-index: 2
+	&:hover
+		background-color: $color_red_orange
+		color: #070716
 .title 
 	position: relative
 	margin-top: 32px 
@@ -147,12 +151,13 @@ nav
 	text-align: center 
 	text-transform: uppercase 
 	color: #222222
+	margin-bottom: 0
 	&_white
 		color: #FFFFFF
 		z-index: 2
 .subtitle
 	position: relative
-	margin-top: 19px
+	// margin-top: 19px
 	font-weight: 400
 	font-size: 17px
 	line-height: 21px
@@ -316,6 +321,32 @@ nav
 			li
 				&:before
 					background: url('../icons/check_red.svg') center center/cover no-repeat
+.world
+	min-height: 720px
+	background: #080816
+	position: relative
+	padding: 46px 0 46px 0
+	&_img
+		position: absolute
+		height: 716px
+		width: 1440px
+		top: 0
+		left: 50%
+		transform: translateX(-50%)
+	&_descr
+		position: relative
+		z-index: 2
+		margin-top: 450px
+		font-weight: 400
+		font-size: 15px
+		line-height: 68px
+		text-align: center
+		text-transform: uppercase
+		color: #1FBAD6
+		&_link
+			&:hover
+				color: $color_red_orange
+
 
 
 
