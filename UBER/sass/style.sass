@@ -1,5 +1,10 @@
 $color_ligth_blue: #1EACC7
 $color_red_orange: #FF5656
+
+=btn_hoveh
+	&:hover
+		background-image: none
+		background-color: $color_ligth_blue
 * 
 	font-family: 'Roboto', sans-serif 
 header 
@@ -68,7 +73,8 @@ nav
 	text-align: center 
 	text-transform: uppercase 
 	color: #FFFFFF 
-	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.21) 
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.21)
+	+btn_hoveh
 .promo 
 	min-height: 800px 
 	background: url('../img/bg/uber_first_bg.jpg') center center/cover no-repeat 
@@ -111,7 +117,8 @@ nav
 	text-align: center 
 	text-transform: uppercase 
 	color: #FFFFFF 
-	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.21) 
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.21)
+	+btn_hoveh 
 .reasons 
 	min-height: 850px 
 	padding: 18px 0 64px 0 
@@ -225,8 +232,28 @@ nav
 			background: #000000
 			margin: 0 auto
 			border-radius: 100%
-			padding: 6px
+			// padding: 6px
 			cursor: pointer
+			&:before
+				content: ''
+				display: block
+				width: 14px
+				height: 2px
+				background-color: $color_ligth_blue
+				transition: 0.3s all
+			&:after
+				content: ''
+				position: absolute
+				left: 50%
+				transform: translateX(-50%)
+				display: block
+				width: 2px
+				height: 14px
+				background-color: $color_ligth_blue
+				transition: 0.3s all
+			&:hover
+				&:before, &::after
+					background-color: $color_red_orange
 .choice
 	position: relative
 	min-height: 898px
@@ -251,6 +278,55 @@ nav
 		top: 0
 		left: 0
 		z-index: 1
+.require
+	padding: 66px 0 87px 0
+	&_block
+		margin: 33px 0
+		&.nmb
+			margin-bottom: 0px
+	&_title
+		font-weight: 400
+		font-size: 22px
+		line-height: 24px
+		color: #1CA8C3
+	&_list
+		list-style-type: none
+		padding-left: 50px
+		margin-top: 22px
+		li
+			position: relative
+			margin-bottom: 10px
+			font-weight: 300
+			font-size: 17px
+			line-height: 24px
+			color: #222222
+			&:before
+				content: ''
+				display: block
+				position: absolute
+				left: -32px
+				top: 3px
+				width: 21px
+				height: 20px
+				background: url('../icons/check_blue.svg') center center/cover no-repeat
+	.warning
+		.require_title
+			color: $color_red_orange
+		.require_list
+			li
+				&:before
+					background: url('../icons/check_red.svg') center center/cover no-repeat
+
+
+
+
+
+				
+	
+			
+
+
+
 
 		
 
