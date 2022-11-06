@@ -352,35 +352,66 @@ footer
 	min-height: 155px
 	padding: 11px 0 38px 0
 	.separator
-		margin: 0 auto
-		width: 301px
-		height: 7px
-		background: #1FBAD6
-	.basic-links
-		margin-top: 31px
-		text-align: center
-		.basic-link
-			margin-left: 18px
-			font-weight: 300
-			font-size: 15px
-			text-transform: uppercase
-			color: #070716
-	.secondery-links
-		margin-top: 6px
-		text-align: center
-		.secondery-link
-			margin-left: 6px
-			font-weight: 300
-			font-size: 11px
-			text-transform: uppercase
-			color: #999999
-	.language-link
-		margin-top: 18px
-		font-weight: 400
-		font-size: 11px
-		text-align: center
-		text-transform: uppercase
-		color: #1FBAD6
+			margin: 0 auto
+			width: 301px
+			height: 7px
+			background: #1FBAD6
+	.footer_container
+		height: 100%
+		display: flex
+		padding: 31px 22px 0 21px
+		.footer_social 
+			display: flex
+			&_item
+				display: flex
+				justify-content: center
+				align-items: center
+				width: 35px
+				height: 35px
+				background: #070716
+				border-radius: 100%
+				margin-left: 6px			
+		.footer_links
+			width: 100%			
+			.footer_links_main
+				// margin-top: 31px
+				text-align: center
+				a
+					margin-left: 18px
+					font-weight: 300
+					font-size: 15px
+					text-transform: uppercase
+					color: #070716
+			.footer_links_sub
+				margin-top: 6px
+				text-align: center
+				a
+					margin-left: 6px
+					font-weight: 300
+					font-size: 11px
+					text-transform: uppercase
+					color: #999999
+			.link_language
+				margin-top: 18px
+				font-weight: 400
+				font-size: 11px
+				text-align: center
+				text-transform: uppercase
+				color: #1FBAD6
+		.footer_mobile
+			display: flex
+			height: 100%
+			&_item
+				height: 35px
+				width: 94px
+				img
+					height: 100%
+					width: 100%
+					
+
+
+
+		
 
 
 
