@@ -1,28 +1,33 @@
-html
-	background: #FFFFFF
- 
+// html
+// 	background: #FFFFFF
 header 
-	position: relative 
+	position: relative
 	height: 50px 
 nav 
 	position: fixed 
 	height: 50px 
-	width: 100% 
+	width: 100%
 	background: #212121 
 	z-index: 2 
+
+.hamburger
+	display: none
+
 .menu 
 	display: flex 
 	justify-content: space-between 
 	padding: 13px 70px 
 	margin: 0 
 	list-style-type: none 
-.menu_item 
-	border-right: 2px dotted black 
-	padding-right: 28px 
-.menu_link 
-	font-weight: 300 
-	font-size: 15px 
-	color: #FFFFFF 
+	&_item 
+		border-right: 2px dotted black 
+		padding-right: 28px
+		&:last-child
+			border-right: none
+	&_link 
+		font-weight: 300 
+		font-size: 15px 
+		color: #FFFFFF 
 .subheader 
 	position: absolute 
 	top: 50px 
@@ -69,6 +74,7 @@ nav
 	color: #FFFFFF 
 	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.21)
 	+btn_hoveh
+
 .promo 
 	min-height: 800px 
 	background: url('../img/bg/uber_first_bg.jpg') center center/cover no-repeat 
@@ -315,30 +321,23 @@ nav
 				&:before
 					background: url('../icons/check_red.svg') center center/cover no-repeat
 .world
-	min-height: 720px
-	background: #080816
 	position: relative
-	padding: 46px 0 46px 0
-	&_img
+	min-height: 720px
+	background: url('../img/bg/world_bg.jpg') center center/cover no-repeat
+	&_link
 		position: absolute
-		height: 716px
-		width: 1440px
-		top: 0
 		left: 50%
 		transform: translateX(-50%)
-	&_descr
-		position: relative
-		z-index: 2
-		margin-top: 450px
-		font-weight: 400
-		font-size: 15px
-		line-height: 68px
+		bottom: 49px
 		text-align: center
+		font-size: 15px
+		font-weight: 400
+		line-height: 68px
 		text-transform: uppercase
 		color: #1FBAD6
-		&_link
-			&:hover
-				color: $color_red_orange
+		&:hover
+			text-decoration: none
+			color: $color_red_orange
 footer
 	min-height: 155px
 	padding: 11px 0 38px 0
@@ -397,3 +396,6 @@ footer
 				img
 					height: 100%
 					width: 100%
+
+.xs-visible
+	display: none
