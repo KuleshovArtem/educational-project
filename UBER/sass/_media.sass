@@ -42,6 +42,8 @@
         &_item
             flex-direction: column
             align-items: center
+        &_img
+            margin-right: 0
     .reasons_descr 
         margin-top: 16px
 
@@ -113,4 +115,63 @@
     .promo_header
         line-height: 40px
 
-                    
+@media (max-width: 575px)
+    header
+        height: 30px
+    nav
+        height: 30px
+    .subheader
+        height: 60px
+        top: 30px
+        &_phone
+            font-weight: 400
+            font-size: 12px
+            text-align: center
+            text-transform: uppercase
+            margin-top: 10px
+        &_btn
+            margin-top: 8px
+            width: 110px
+            height: 22px
+            font-size: 10px
+        .subheader_desrc
+            display: none
+        .subheader_logo
+            margin-top: 18px
+    .promo
+        min-height: 400px
+        padding: 93px 0 35px 0
+        &_descr
+            display: none
+        &_header
+            font-size: 30px
+            padding: 0 16px
+            line-height: 36px
+        &_subheader
+            font-size: 19px
+            margin-top: 33px
+            padding: 0 6px
+            line-height: 24px
+        &_btn
+            width: 210px
+            height: 50px
+            font-size: 16px
+            margin-top: 73px
+    .menu
+        width: 80%
+    .reasons
+        padding: 22px 0 36px 0
+        &_block
+            margin-top: 24px
+        &_img
+            width: 100px
+            height: 100px
+        &_descr
+            width: 100%
+            margin-top: 24px
+            margin-left: 0
+
+
+    .title
+        font-size: 14px
+        margin-top: 10px
