@@ -6,11 +6,13 @@
     max-width: 950px;
     margin: 0 auto;
 }
+@import 'blocks/buttons';
 @import 'blocks/promo';
 @import 'blocks/header';
-@import 'blocks/buttons';
 @import 'blocks/advantages';
-@import 'media';
 @import 'blocks/titles';
 @import 'blocks/cansultation';
 @import 'blocks/forms';
+
+// media в самом конце
+@import 'media';
