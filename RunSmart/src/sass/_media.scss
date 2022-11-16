@@ -1,4 +1,7 @@
 @media (max-width:1200px) {
+    .container {
+        max-width: 850px;
+    }
     .promo {
         min-height: 502px;
         padding: 12px 0 36px 0;
@@ -74,6 +77,11 @@
     .title {
         &_left {
             font-size: 30px;
+        }
+    }
+    .carousel {
+        button {
+            display: none;
         }
     }
 }
