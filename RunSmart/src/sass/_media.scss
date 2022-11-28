@@ -190,6 +190,15 @@
     .reviews__descr {
         margin-left: 40px;
     }
+    .footer {
+        &__info {
+            position: relative;
+            width: 100%;
+        }
+        &__map {
+            height: 320px;
+        }
+    }
 
 
 }
@@ -297,5 +306,13 @@
             margin-top: 42px;
         }
     }
-
+    .footer {
+        &__info {
+            padding: 50px 10px 60px 10px;
+            height: auto;
+        }
+        &__map {
+            height: 360px;
+        }
+    }
 }
