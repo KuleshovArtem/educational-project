@@ -12,7 +12,6 @@
         padding: 50px 68px 60px 68px;
     }
     &__addr {
-        // margin-top: 20px;
         font-weight: 500;
         font-size: 20px;
         text-align: center;
@@ -49,6 +48,12 @@
             img {
                 height: 25px;
             }
+            &:hover {
+                background-color: black;
+                border: 2px solid #000000;
+            }
+        
+
         }
     }
     &__map {

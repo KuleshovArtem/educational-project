@@ -10,6 +10,15 @@
     text-align: center;
     text-transform: uppercase;
     color: #FFFFFF;
+    &:hover {
+        transition: 0.1s all;
+        box-shadow: 3px 3px 15px $main-color;
+    &:active {
+        transition: 0.2s all;
+        background: #ffffff;
+        color:#050505;
+    }
+    }
     &_main {
         margin-top: 79px;
         width: 300px;
@@ -25,14 +34,5 @@
         width: 135px;
         height: 44px;
         font-size: 14px;
-
-        // transition: 0.5s all;
-        // &:hover {
-        //     box-shadow: 3px 3px 15px $main-color;
-        // &:active {
-        //     background: #ffffff;
-        //     color:#050505;
-        // }
-        // }
     }
 }

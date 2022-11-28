@@ -49,6 +49,9 @@
         a {
             font-weight: 500;  
             color: #FFFFFF;
+            &:hover {
+                color: $main-color;
+            }
         }
     }
 }
