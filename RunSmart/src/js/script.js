@@ -132,4 +132,6 @@ $(function() {
    
     
 });
-})(jQuery);   
+})(jQuery);  
+
+new WOW().init();
