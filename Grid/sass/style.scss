@@ -1,0 +1,31 @@
+
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.grid-container {
+    margin: 0 auto;
+    padding: 82px 0 88px 0;
+    width: 1140px;
+    display: grid;
+    grid-template-columns: repeat(4, 240px);
+    grid-template-rows: repeat(2, 260px);
+    grid-auto-rows: 260px;
+    gap: 60px 60px;
+
+}
+.news-item {
+    &__img {
+        width: 100%;
+    }
+    &__descr {
+        margin-top: 15px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        color: #000000;
+    }
+}
