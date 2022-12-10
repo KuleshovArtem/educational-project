@@ -133,30 +133,59 @@
 
 // Если ваш язык поддерживает это, попробуйте использовать оператор switch.
 
-function switchItUp(number){
+// function switchItUp(number){
 
-  switch (number) {
-    case 1:
-      return 'One';
-    case 2:
-      return 'Two';
-    case 3:
-      return 'Three';
-    case 4:
-      return 'Four';
-    case 5:
-      return 'Five';
-    case 6:
-      return 'Six';
-    case 7:
-      return 'Seven';
-    case 8:
-      return "Eight";
-    case 9:
-      return 'Nine';
-    case 0:
-      return 'Zero';
-  }
-}
+//   switch (number) {
+//     case 1:
+//       return 'One';
+//     case 2:
+//       return 'Two';
+//     case 3:
+//       return 'Three';
+//     case 4:
+//       return 'Four';
+//     case 5:
+//       return 'Five';
+//     case 6:
+//       return 'Six';
+//     case 7:
+//       return 'Seven';
+//     case 8:
+//       return "Eight";
+//     case 9:
+//       return 'Nine';
+//     case 0:
+//       return 'Zero';
+//   }
+// }
 
-  console.log(switchItUp(7));
+//   console.log(switchItUp(7));
+
+// Завершите метод, который принимает логическое значение и возвращает "Yes"строку для true или "No"строку для false.
+
+// function boolToWord( bool ){
+//   if (bool) {
+//     return "Yes";
+//   } else {
+//     return "No";
+//   }
+// }
+
+// Подсчитайте количество делителей положительного целого n числа . Случайные тесты доходят до n = 500000.
+// 4 --> 3 (1, 2, 4)
+// 5 --> 2 (1, 5)
+// 12 --> 6 (1, 2, 3, 4, 6, 12)
+// 30 --> 8 (1, 2, 3, 5, 6, 10, 15, 30)
+// Обратите внимание, что вы должны возвращать только число, количество делителей. Цифры в круглых скобках показаны только для того, чтобы вы могли видеть, какие числа учитываются в каждом конкретном случае.
+
+// function getDivisorsCnt(n){
+//   let count = 0;
+//   for (let i = 1; i <= n; i++ ) {
+//     if (n % i == 0) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+
+// console.log(getDivisorsCnt(30));
