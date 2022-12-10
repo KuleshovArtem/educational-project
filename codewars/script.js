@@ -95,7 +95,68 @@
 //   return +newArr;
 // }
 
-function squareDigits(num){
-  return +num.toString().split('').map(i => i*i).join('');
+// function squareDigits(num){
+//   return +num.toString().split('').map(i => i*i).join('');
+// }
+// console.log(squareDigits(9119));
+
+//Напишите функцию bmi, которая вычисляет индекс массы тела (bmi = вес / рост2).
+
+//if bmi <= 18.5 return "Underweight"
+
+// if bmi <= 25.0 return "Normal"
+
+// if bmi <= 30.0 return "Overweight"
+
+// if bmi > 30 return "Obese"
+
+// function bmi(weight, height) {
+//   let bmi = weight/height**2;
+//   if (bmi <= 18.5) {
+//     return "Underweight";
+//   } else if (bmi <= 25.0) {
+//     return "Normal";
+//   } else if (bmi <= 30.0) {
+//     return "Overweight";
+//   } else if (bmi > 30) {
+//     return "Obese";
+//   }
+// }
+
+// console.log(bmi(95, 1.8));
+
+// Если указано число от 0 до 9, верните его прописью.
+
+// Ввод :: 1
+
+// Вывод :: "Один".
+
+// Если ваш язык поддерживает это, попробуйте использовать оператор switch.
+
+function switchItUp(number){
+
+  switch (number) {
+    case 1:
+      return 'One';
+    case 2:
+      return 'Two';
+    case 3:
+      return 'Three';
+    case 4:
+      return 'Four';
+    case 5:
+      return 'Five';
+    case 6:
+      return 'Six';
+    case 7:
+      return 'Seven';
+    case 8:
+      return "Eight";
+    case 9:
+      return 'Nine';
+    case 0:
+      return 'Zero';
+  }
 }
-console.log(squareDigits(9119));
+
+  console.log(switchItUp(7));
