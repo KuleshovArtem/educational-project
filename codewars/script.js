@@ -189,3 +189,251 @@
 // }
 
 // console.log(getDivisorsCnt(30));
+// Учитывая массив целых чисел, удалите наименьшее значение. Не изменяйте исходный массив / список.Если есть несколько элементов с одинаковым значением, удалите тот, у которого индекс меньше. Если вы получаете пустой массив / список, верните пустой массив / список.
+
+// Не меняйте порядок оставшихся элементов.
+
+// function removeSmallest(numbers) {
+//     let sortArr = numbers.indexOf(numbers.sort((a, b) => a - b)[0]);
+
+//     let result = numbers.concat([]);
+//     result.splice(sortArr, 1);
+    
+//     return result;
+// }
+
+// console.log(removeSmallest([5,3,2,1,4]));
+
+// Создайте функцию, которая будет возвращать оператор приветствия, использующий входные данные; ваша программа должна возвращать, "Hello, <name> how are you doing today?".
+
+// function greet(name){
+//     return `Hello, ${name} how are you doing today?`;
+//   }
+
+// Учитывая два целых aчисла и b, которые могут быть положительными или отрицательными, найдите сумму всех целых чисел между ними и включая их, и верните ее. Если два числа равны, верните aили b.
+
+// (1, 0) --> 1 (1 + 0 = 1)
+// (1, 2) --> 3 (1 + 2 = 3)
+// (0, 1) --> 1 (0 + 1 = 1)
+// (1, 1) --> 1 (1 since both are same)
+// (-1, 0) --> -1 (-1 + 0 = -1)
+// (-1, 2) --> 2 (-1 + 0 + 1 + 2 = 2)
+
+// function getSum( a,b ){ 
+//     let result = 0;  
+//     if (a < b) {
+//         for (let i = 0; i <= b-a; i++) {
+//             result += (b-i);
+//         }
+//     } else {
+//         for (let i = 0; i <= a-b; i++) {
+//             result += (a-i);
+//         }
+//     }
+//     return result;
+
+// }
+
+// console.log(getSum(-1, 2));
+
+
+// У мистера Скруджа есть сумма денег "P", которую он хочет инвестировать. Прежде чем он это сделает, он хочет знать, сколько лет "Y" эта сумма "P" должна храниться в банке, чтобы она составила желаемую сумму денег "D".
+
+// Сумма хранится в течение "Y" лет в банке, где проценты "I" выплачиваются ежегодно. После уплаты налогов 'T' за год новая сумма реинвестируется.
+
+// Примечание к налогообложению: налогом облагается не инвестированная основная сумма, а только начисленные проценты за год
+// Let P be the Principal = 1000.00      
+// Let I be the Interest Rate = 0.05      
+// Let T be the Tax Rate = 0.18      
+// Let D be the Desired Sum = 1100.00
+
+
+// After 1st Year -->
+// P = 1041.00
+// After 2nd Year -->
+// P = 1083.86
+// After 3rd Year -->
+// P = 1128.30
+
+// Таким образом, мистеру Скруджу приходится ждать 3 года, пока первоначальная сумма основного долга не достигнет желаемой суммы.
+
+// Ваша задача - выполнить предоставленный метод и вернуть количество лет "Y" в целом, чтобы мистер Скрудж получил желаемую сумму.
+
+// Предположение: Предположим, что желаемый принципал 'D' всегда больше, чем начальный принципал. Однако лучше всего принять во внимание, что при желании основной 'D' равен основному 'P', это должно вернуть 0 лет.
+
+// function calculateYears(principal, interest, tax, desired) {
+        
+//         if (principal == desired) {
+//             return 0;
+//         } else {
+
+//             let Y = 0;
+        
+//             for (let i = 0; principal <= desired; i++) {
+//                 principal += principal * interest * (1 - tax);
+//                 Y ++;
+//             }
+//             return Y;
+//         }
+//     }
+// console.log(calculateYears(1000,0.05,0.18,1100));
+
+// let result = '';
+// const length = 7;
+
+// for (let i = 1; i < length; i++) {
+//     result += '\n';
+//     for (let j = 0; j < i; j++) {
+//         result += '*';
+//     }
+// }
+
+// console.log(result);
+
+
+// const lines = 5;
+// let result = '';
+
+// for (let i = 0; i <= lines; i++) {
+//     for (let j = 5; j > i; j--) {
+//         result += ' ';
+//     }
+//     for (let k = 0; k < i+1; k++) {
+//         result += '*';
+//     }
+//     for (let l= 0; l < i; l++) {
+//         result += '*';
+//     }
+//     result += '\n';ч
+// }
+
+// console.log(result);
+
+// Создайте функцию, которая выдает персонализированное приветствие. Эта функция принимает два параметра: nameи owner.
+
+// Используйте условные обозначения, чтобы вернуть правильное сообщение:
+
+
+// кейс	Возврат
+// имя равно владельцу	"Привет, босс"
+// в противном случае	"Привет, гость"
+
+// function greet (name, owner) {
+//     if(name == owner) {
+//         return 'Hello boss';
+//     } else {
+//         return 'Hello guest';
+//     }
+//   }
+
+//   Создайте функцию, которая принимает 2 целых числа в виде строки в качестве входных данных и выводит сумму (также в виде строки):
+
+// //   Пример: (Ввод1, Ввод2 --> Вывод)
+
+// "4",  "5" --> "9"
+// "34", "5" --> "39"
+// "", "" --> "0"
+// "2", "" --> "2"
+// "-5", "3" --> "-2"
+
+// function sumStr(a,b) {
+//   return String(+a + +b );
+// }
+//   String.prototype.toJadenCase = function () {
+//     return this.split(' ').map(element => {
+//         return element[0].toUpperCase() + element.slice(1);
+//     }).join(' ');
+    
+//    };
+
+
+// const NotJadenCased = "How can mirrors be real if our eyes aren't real";
+
+// console.log(NotJadenCased.toMy());
+
+
+// function testEven(n) {
+//   return (0 == (n % 2)) ? true : false;
+// }
+// testEven(0.5);
+
+// function digitize(n) {
+//   return String(n).split('').reverse().map(item => + item).join('');
+// }
+
+// console.log(digitize(35231));
+
+// function sumTwoSmallestNumbers(numbers) {  
+//   numbers.sort((a, b) => a - b);
+//   return numbers[0] + numbers[1];
+// }
+
+// console.log(sumTwoSmallestNumbers([15, 28, 4, 2, 43]));
+
+// function XO(str) {
+//   str = str.toLowerCase().split('');
+//   return str.filter(x => x === 'x').length == str.filter(x => x ==='o').length;
+// }
+
+// console.log(XO('oX'));
+// console.log(XO('oXxx'));
+// console.log(XO('oXoxdjj'));
+
+// const result = getSum(5, 6);
+// const getSum = function(a, b) {
+//     return a + b;
+// }
+
+
+// function disemvowel(str) {
+//     const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+//     let newStr = '';
+
+//     for (let i = 0; i < str.length; i++) {
+//         let symbol = str.charAt(i);
+//         if (vowels.indexOf(symbol) == -1) {
+//             newStr += symbol;
+//         }
+//     }
+//     return  newStr;
+//     }
+
+// console.log(disemvowel("aeiodubaeriou"));
+
+// function filter_list(l) {
+//     // let result = [];
+//     // l.map(item => {
+//     //     if(typeof(item) === 'number') {
+//     //         result.push(item);
+//     //     }
+//     // });
+//     // return result;
+
+//     return l.filter((i) => { return typeof i == "number"});
+//   }
+
+// console.log(filter_list([1,2,'a','b']));
+
+
+// function evenOrOdd(number) {
+//     return number % 2 == 0 ? "Even" : "Odd" ;
+//   }
+
+function validatePIN (pin) {
+    let arr = pin.split('');
+    
+    if ((arr.indexOf(' ', 0) !== -1) && (arr.indexOf('\n', 0) !== -1)) {
+        return false;
+    } else {
+        let newArr = arr.map(item => +item);
+        if (newArr.includes(NaN)) {
+            return false; 
+        } else {
+            return (newArr.length === 4 || newArr.length === 6)? true : false;
+        }
+    }   
+  }
+//   
+console.log(validatePIN('1234'));
+ 
+
