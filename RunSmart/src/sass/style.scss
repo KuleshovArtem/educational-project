@@ -14,6 +14,13 @@
     max-width: 950px;
     margin: 0 auto;
 }
+.show {
+    display: block;
+}
+.hide {
+    display: none;
+}
+
 @import 'blocks/buttons';
 @import 'blocks/promo';
 @import 'blocks/header';
