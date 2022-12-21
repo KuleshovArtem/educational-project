@@ -419,21 +419,29 @@
 //     return number % 2 == 0 ? "Even" : "Odd" ;
 //   }
 
-function validatePIN (pin) {
-    let arr = pin.split('');
+// function validatePIN (pin) {
+//     let arr = pin.split('');
     
-    if ((arr.indexOf(' ', 0) !== -1) && (arr.indexOf('\n', 0) !== -1)) {
-        return false;
-    } else {
-        let newArr = arr.map(item => +item);
-        if (newArr.includes(NaN)) {
-            return false; 
-        } else {
-            return (newArr.length === 4 || newArr.length === 6)? true : false;
-        }
-    }   
-  }
-//   
-console.log(validatePIN('1234'));
+//     if ((arr.indexOf(' ', 0) !== -1) && (arr.indexOf('\n', 0) !== -1)) {
+//         return false;
+//     } else {
+//         let newArr = arr.map(item => +item);
+//         if (newArr.includes(NaN)) {
+//             return false; 
+//         } else {
+//             return (newArr.length === 4 || newArr.length === 6)? true : false;
+//         }
+//     }   
+//   }
+// //   
+// console.log(validatePIN('1234'));
+
+//doTest([2, 3, 1], 0);
  
+// function gimme (triplet) {
+//     return triplet.indexOf([...triplet].sort((a,b) => a-b)[1]);   
+// }
+
+// console.log(gimme([2,3,1]));
+
 
