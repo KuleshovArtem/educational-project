@@ -445,3 +445,20 @@
 // console.log(gimme([2,3,1]));
 
 
+// function countBy(x, n) {
+//     let z = [];
+//         for (let i = 1; i <= n; i++) {
+//             z[i-1]=i * x;
+//         }
+  
+//     return z;
+//   }
+//   console.log(countBy(1,10));
+
+function friend(friends){
+        return friends.filter(item => item.length === 4);
+  }
+
+
+  console.log(friend(["Ryan", "Kieran", "Mark"]));
+  //(friend(["Ryan", "Kieran", "Mark"]), ["Ryan", "Mark"])
