@@ -29,23 +29,16 @@ gulp.task('styles', function () {
 			cascade: false
 		}))
         .pipe(cleanCSS({compatibility: 'ie8'}))
-        .pipe(gulp.dest('src/css'))
         .pipe(gulp.dest('dist/css'))  // папка компиляции css файла src/css or dist/css
         .pipe(browserSync.stream());
 });
-
-//отсллеживание изменения 
+//компиляция scss/sass файлов
 gulp.task('watch', function () {
     gulp.watch('src/sass/**/*.+(scss|sass|css)', gulp.parallel('styles'));
-    gulp.watch('src/*.html').on('change', gulp.parallel('html'));
-    gulp.watch('src/js/**/*.js').on('change', gulp.parallel('scripts'));   
-    gulp.watch('src/fonts/**/*').on('add', gulp.parallel('fonts'));
-    gulp.watch('src/icons/**/*').on('all', gulp.parallel('icons'));
-    gulp.watch('src/img/**/*').on('add', gulp.parallel('img'));   
-
+    // gulp.watch('src/*.html').on('change', browserSync.reload);   //в уроке его не было
+    gulp.watch('src/*.html').on('change', gulp.parallel('html')); //добавил новые описание
 
 });
-
 // сжатие и компирование html в dist
 gulp.task('html', function () {
     return gulp.src("src/*.html")
@@ -56,46 +49,32 @@ gulp.task('html', function () {
 // копирование js файлов в dist
 gulp.task('scripts', function () {
     return gulp.src("src/js/**/*.js")
-        .pipe(gulp.dest('dist/js'))
-        .pipe(browserSync.stream());
+        .pipe(gulp.dest('dist/js'));
 });
 
 //копирование fonts в dist
 gulp.task('fonts', function () {
     return gulp.src("src/fonts/**/*")
-        .pipe(gulp.dest('dist/fonts'))
-        .pipe(browserSync.stream());
+        .pipe(gulp.dest('dist/fonts'));
 });
 
 //копирование icons в dist
 gulp.task('icons', function () {
     return gulp.src("src/icons/**/*")
-        .pipe(gulp.dest('dist/icons'))
-        .pipe(browserSync.stream());
+        .pipe(gulp.dest('dist/icons'));
 });
 
 //копирование mailer в dist
-// gulp.task('mailer', function () {
-//     return gulp.src("src/mailer/**/*")
-//         .pipe(gulp.dest('dist/mailer'))
-//         .pipe(browserSync.stream());
-// });
+gulp.task('mailer', function () {
+    return gulp.src("src/mailer/**/*")
+        .pipe(gulp.dest('dist/mailer'));
+});
 
 //копирование img в dist
 gulp.task('img', function () {
     return gulp.src("src/img/**/*")
         .pipe(imagemin())
-        .pipe(gulp.dest('dist/img'))
-        .pipe(browserSync.stream());
+        .pipe(gulp.dest('dist/img'));
 });
 
-//копирование facicon в dist
-// gulp.task('ico', function () {
-//     return gulp.src("src/**/*.ico")
-//         .pipe(gulp.dest('dist'));
-// });
-
-
-// gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'html', 'scripts', 'fonts', 'icons', 'mailer', 'img', 'ico' ));  //отключен сервер php и ico
-
-gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'html', 'scripts', 'fonts', 'icons', 'img'));
+gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'html', 'scripts', 'fonts', 'icons', 'mailer', 'img' ));

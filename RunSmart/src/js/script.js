@@ -1,3 +1,115 @@
+window.addEventListener('DOMContentLoaded', () => {
+   //Tabs
+      
+    const tabs = document.querySelectorAll('.catalog__tab');
+    const catalog = document.querySelectorAll('.catalog__content');
+
+    function hideTabCatalog () {
+        catalog.forEach(item => {
+            item.classList.remove('catalog__content_active');
+        });
+        tabs.forEach(item => {
+            item.classList.remove('catalog__tab_active');
+        });
+    }
+
+    function showTabCatalog (i = 0) {
+        catalog[i].classList.add('catalog__content_active');
+        tabs[i].classList.add('catalog__tab_active');
+    }
+
+    hideTabCatalog();
+    showTabCatalog();
+
+    tabs.forEach((item, i) => {
+        item.addEventListener('click', (event) => {
+            const target = event.target;
+            
+            if(target && target.classList.contains('div')) {
+                hideTabCatalog();
+                showTabCatalog(i);
+            }
+            
+        });
+    });
+
+    //tabs more
+    const tabsMore = document.querySelectorAll('.catalog-item__link');
+    const tabsBack = document.querySelectorAll('.catalog-item__back');
+    const tabsContent = document.querySelectorAll('.catalog-item__content');
+    const tabsContentList = document.querySelectorAll('.catalog-item__list');
+
+    
+    tabsMore.forEach((item, i) => {
+        item.addEventListener('click',(event) => {
+            event.preventDefault();
+            tabsContentList[i].classList.add('catalog-item__list_active');
+            tabsContent[i].classList.remove('catalog-item__content_active');
+        });
+    });
+
+    tabsBack.forEach((item, i) => {
+        item.addEventListener('click',(event) => {
+            event.preventDefault();
+            tabsContentList[i].classList.remove('catalog-item__list_active');
+            tabsContent[i].classList.add('catalog-item__content_active');
+            
+        });
+    });
+
+    //Modal
+    const btnConsultation = document.querySelectorAll('[data-modal=consultation]');
+    const btnPay = document.querySelectorAll('.button_mini');
+    const modalClose = document.querySelectorAll('.modal__close');
+    const overlay = document.querySelector('.overlay');
+    const modalConsultation = document.querySelector('#consultation');
+    const modalOrder = document.querySelector('#order');
+    const modalThanks = document.querySelector('#thanks'); //реализация всплытия не реализовно. Находится в jquery в валидации
+
+    //не удается обратиться к элементам
+    // const orderDescr = document.querySelectorAll('modal__descr');
+    // const descrContent = document.querySelectorAll('catalog-item__subtitle');
+
+    // orderDescr.forEach(item => {
+    //     console.log(item);
+    // });
+    // descrContent.forEach(item => {
+    //     console.dir(item);
+    // });
+
+    btnConsultation.forEach(item => {
+        item.addEventListener('click', () => {
+          overlay.style.display = 'block';
+          modalConsultation.style.display = 'block';
+        });
+    });
+
+    btnPay.forEach((item, i) => {
+        item.addEventListener('click', (event) => {
+            overlay.style.display = 'block';
+            modalOrder.style.display = 'block';
+           //не раеализовано подтягивание названия товара в модальное окно
+        });
+    });
+
+    modalClose.forEach(item => {
+        item.addEventListener('click', () => {
+            overlay.style.display = 'none';
+            modalConsultation.style.display = 'none';
+            modalOrder.style.display = 'none';
+            modalThanks.style.display = 'none';
+        });
+    });
+    
+
+
+
+    
+    
+
+});
+ 
+ 
  const slider = tns({
     container: '.carousel__inner',
     items: 1,
@@ -18,41 +130,24 @@ document.querySelector('.prev').addEventListener('click', function () {
     
 (function($) {
 $(function() {
-    
-    $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function() {
-    $(this)
-        .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
-        .closest('div.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index()).addClass('catalog__content_active');
-    });
-
-    function toggleSlide (item) {
-        $(item).each(function(i) {
-            $(this).on('click', function (event) {
-                event.preventDefault();
-                $('.catalog-item__content').eq(i).toggleClass('catalog-item__content_active');
-                $('.catalog-item__list').eq(i).toggleClass('catalog-item__list_active');
-            });
-        });
-    }
-    toggleSlide('.catalog-item__link');
-    toggleSlide('.catalog-item__back');
 
     // modal
-    $('[data-modal=consultation]').on('click', function () {
-        $('.overlay, #consultation').fadeIn();
-    });
+    // $('[data-modal=consultation]').on('click', function () {
+    //     $('.overlay, #consultation').fadeIn();
+    // });
 
-    $('.modal__close').on('click', function () {
-        $('.overlay, #consultation, #order, #thanks').fadeOut();
-    });
+    // $('.modal__close').on('click', function () {
+    //     $('.overlay, #consultation, #order, #thanks').fadeOut();
+    // });
 
-    $('.button_mini').each(function(i) {
-        $(this).on('click', function () {
-            $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
-            $('.overlay, #order').fadeIn();
-        });
-    });
+    // $('.button_mini').each(function(i) {
+    //     $(this).on('click', function () {
+    //         $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
+    //         $('.overlay, #order').fadeIn();
+    //     });
+    // });
 
+// validate forms
     function validateForms (form) {
         $(form).validate({
             rules: {
